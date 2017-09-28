@@ -13,6 +13,11 @@ public class App
         b.addPanier("France",0.80);
         b.addPanier("Espagne",0.80);
         b.addPanier("Floride", 0.90);
+       String s1 = b.toString();
+        System.out.println(s1);
         b.boycotteOrigine("France");
+        String s2 = b.toString();
+        System.out.println(s2);
+        
     }
 }
