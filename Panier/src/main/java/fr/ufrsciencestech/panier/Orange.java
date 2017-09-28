@@ -29,4 +29,9 @@ public class Orange {
     public String getOrigine(){
         return origine;
     }
+    
+    /*public boolean equals(Orange o){
+        
+        return this.;
+    }*/
 }
