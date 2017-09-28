@@ -13,15 +13,16 @@ package fr.ufrsciencestech.panier;
  */
 
 import java.util.ArrayList;
+import fr.ufrsciencestech.panier.Orange;
 
 
 public class Panier {
     
-    private ArrayList alpanier; 
+    private ArrayList<Orange> alpanier; 
     private int taille;
     
     public Panier(){
-        ArrayList alpanier = new ArrayList();
+        ArrayList<Orange> alpanier = new ArrayList<Orange>();
         taille = 5;
     }
     
@@ -66,4 +67,21 @@ public class Panier {
        }
        else { System.out.println("Panier déjà vide");}
     }
+     
+     public double getPrix(){
+         double prixTotal=0;
+         for (int i = 0 ; i<alpanier.size();i++){
+            prixTotal+=alpanier.get(i).getPrix();
+         }
+         
+         return prixTotal;
+     }
+     
+     public void boycotteOrigine(String pays){
+         for (Orange o : alpanier){
+             if (o.getOrigine().equals(pays)) {
+                 alpanier.remove(o);
+             }
+         }
+     }
 }
