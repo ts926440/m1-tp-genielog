@@ -8,6 +8,8 @@ package fr.ufrsciencestech.panier;
 /**
  *
  * @author ts926440
+ * 
+ * modif push
  */
 
 import java.util.ArrayList;
