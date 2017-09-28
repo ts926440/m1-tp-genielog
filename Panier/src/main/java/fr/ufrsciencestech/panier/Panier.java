@@ -95,10 +95,8 @@ public class Panier {
      }
      
      public void boycotteOrigine(String pays){ //liste en cours de modif = erreur
-         for (Orange o : alpanier){
-             if (o.getOrigine().equals(pays)) {
-                 alpanier.remove(o);
-             }
+         for (int i=0;i<alpanier.size();i++){
+            // if(alpanier.get(i).getOrigine().)
          }
      }
 }
