@@ -18,7 +18,7 @@ import fr.ufrsciencestech.panier.Orange;
 
 public class Panier {
     
-    private ArrayList<Orange> alpanier; 
+    private ArrayList<Orange> alpanier= new ArrayList<Orange>(); 
     private int taille;
     
     public Panier(){
@@ -27,22 +27,24 @@ public class Panier {
     }
     
     public Panier(int size){
-        ArrayList alpanier = new ArrayList();
+        ArrayList<Orange> alpanier = new ArrayList<Orange>();
         taille = size;
     }
     
     public boolean estPlein(){
-        boolean test=false;
-         if(alpanier.size() == taille) 
-       {
-           test=true;
-       } 
+       boolean test = false;
+      if (alpanier != null){ 
+               if(alpanier.size() == taille) 
+                {
+                   test=true;
+                } 
+      }      
        return test;
     }
     
     public boolean estVide(){
         boolean test=false;
-         if(alpanier.size() == 0) 
+         if(alpanier.isEmpty()) 
        {
            test=true;
        } 
@@ -50,13 +52,28 @@ public class Panier {
     }
     
     public void addPanier(Orange o){
-       if(alpanier.size() <= taille) 
+        
+       if(this.estPlein()==false) 
        {
            alpanier.add(o);
        } 
        else 
        {
            System.out.println("Plus de place dans le panier. /n");
+       }
+       
+    }
+    
+    public void addPanier(String pays, double prix){
+       
+       if(this.estPlein()!=false) 
+       {
+           System.out.println("Plus de place dans le panier. /n");
+       } 
+       else 
+       {
+           Orange o = new Orange(pays,prix);
+           alpanier.add(o);
        }
        
     }
@@ -77,7 +94,7 @@ public class Panier {
          return prixTotal;
      }
      
-     public void boycotteOrigine(String pays){
+     public void boycotteOrigine(String pays){ //liste en cours de modif = erreur
          for (Orange o : alpanier){
              if (o.getOrigine().equals(pays)) {
                  alpanier.remove(o);

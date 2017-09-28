@@ -18,6 +18,10 @@ public class Orange {
         origine="France";
         prix=2.00;
     }
+    public Orange(String pays, double p){
+        origine=pays;
+        prix=p;
+    }
     
     public double getPrix(){
         return prix;
